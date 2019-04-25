@@ -20,6 +20,8 @@
         <input id="classic-input" type="text">
     </div>
 
+    
+    
     <hr>
      <!-- We have already created our very first Vue app!
     This looks pretty similar to rendering a string template,
@@ -38,8 +40,41 @@
         they apply special reactive behavior to the rendered DOM.
         Here, it is basically saying “keep this element’s title attribute up-to-date with the message property on the
         Vue instance.” -->
+        <div v-html="html"></div>
+        
         <div v-bind:title="HI">{{message}}</div>
         <input type="text" v-model="message">
+        
+    <!-- conditional rendering  v-show/v-if -->
+        <div>
+            <span v-if="'1'==='1'"> Hi !! 1==1 </span>
+        </div>
+
+        <div>
+            <span v-show="isActive"> is Active </span>
+        </div>
+
+        <div>
+            <ul>    
+                <li v-for="(item,index) in items">
+                    {{item.title}} - 
+                    {{index}}
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <span>
+                <button @click = "()=>{this.items.pop()}"></button>
+            </span>
+        </div>
+        <div>
+                <span>
+                    <button @click = "()=>{this.items.push({id:'1',title:'CCC'})}"></button>
+                </span>
+            </div>
+        
+
     </div>
 </body>
 
